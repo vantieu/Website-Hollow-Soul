@@ -1,0 +1,255 @@
+/* ===== COLER - * - BODY - HEADER - FOOTER ===== */
+
+:root {
+    /* nền chính */
+    --bg-main: #0f1115;
+    /* nền section */
+    --bg-section: #171a21;
+    /* card */
+    --bg-card: #1f2430;
+    /* chữ chính */
+    --text-main: #e6e6e6;
+    /* chữ phụ */
+    --text-muted: #a0a0a0;
+    /* màu nhấn (link, nút) */
+    --accent: #5da9ff;
+    --accent-hover: #8fc1ff;
+    --border-soft: #2c3240;
+}
+
+/* Áp dụng box-sizing chuẩn và reset margin mặc định */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Đẩy nội dung xuống để không bị header fixed che */
+body {
+    padding-top: 50px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* ===== HEADER CHÍNH ===== */
+.header-menu {
+    width: 100%;
+    /* Header chiếm toàn bộ chiều ngang */
+    height: 50px;
+    /* Chiều cao cố định */
+    position: fixed;
+    /* Header luôn bám trên cùng khi cuộn */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Luôn nằm trên các phần tử khác */
+
+    display: flex;
+    /* Dùng flex để chia logo + menu */
+    justify-content: space-between;
+    /* Đẩy logo trái – menu phải */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+
+    background-color: var(--bg-section);
+    /* Màu nền giống wiki */
+    border-bottom: 1px solid var(--border-soft);
+    /* Đường kẻ phân cách */
+}
+
+/* ===== LOGO / ICON ===== */
+.header-icon {
+    width: 200px;
+    /* Độ rộng cố định cho logo */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-icon-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+}
+
+/* Link logo */
+.header-icon-box a {
+    text-decoration: none;
+    /* Bỏ gạch chân */
+    text-transform: uppercase;
+    /* Viết hoa */
+    font-weight: bold;
+    color: #e6e6e6;
+}
+
+.header-icon-box a:hover {
+    color: var(--accent-hover);
+}
+
+/* ===== NAV MENU ===== */
+.nav-menu {
+    flex: 1;
+    /* Chiếm phần còn lại của header */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Khung bọc menu để căn giữa */
+.nav-menu-box {
+    width: 100%;
+}
+
+/* Thanh menu */
+.menu {
+    height: 50px;
+    background-color: transparent;
+    /* Không cần màu riêng */
+}
+
+/* Danh sách menu */
+.menu ul {
+    height: 100%;
+    display: flex;
+    /* Menu nằm ngang */
+    justify-content: center;
+    /* Căn giữa */
+    align-items: center;
+    /* Căn giữa dọc */
+    gap: 40px;
+    /* Khoảng cách giữa các mục */
+}
+
+/* Bỏ dấu chấm list */
+.menu li {
+    list-style: none;
+}
+
+/* Link menu */
+.menu li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: capitalize;
+    /* Tăng vùng click */
+    padding: 8px 4px;
+}
+
+
+.menu li a:hover {
+    color: var(--accent);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+}
+
+.footer p {
+    color: #f4f4f4;
+}
+
+/* ===== GAMEPLAY HERO ===== */
+.gameplay-hero {
+    width: 100%;
+    height: 200px;
+    padding: 30px 0;
+
+    text-align: center;
+}
+
+.gameplay-hero p {
+    padding: 20px 0;
+}
+
+/* ===== MECHANICS ===== */
+.mechanics {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.mechanics h2 {
+    margin-bottom: 40px;
+}
+
+.mechanics .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* ⭐ QUAN TRỌNG */
+    flex-wrap: wrap;
+}
+
+.mechanics .card {
+    width: 320px;
+}
+
+.mechanics .card h3 {
+    margin-top: 15px;
+}
+
+/* Video */
+.mechanics video {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== CORE GAMEPLAY ===== */
+.core-gameplay {
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.core-gameplay h2 {
+    margin-bottom: 20px;
+}
+
+.core-gameplay .intro {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.gameplay-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.gameplay-cards .card {
+    /* 2 card / hàng */
+    width: calc(50% - 30px);
+    padding: 30px;
+    /* demo */
+    background-color: var(--bg-card);
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+.gameplay-cards .card h3 {
+    margin-bottom: 15px;
+}
+
+.gameplay-cards .card p {
+    line-height: 1.6;
+
+}
+
+@media (max-width: 768px) {
+    .gameplay-cards .card {
+        width: 100%;
+    }
+}
